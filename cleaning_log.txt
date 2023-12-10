@@ -1,0 +1,10 @@
+2023-12-01 16:30:41,937 - WARNING -  * Debugger is active!
+2023-12-01 16:30:41,942 - INFO -  * Debugger PIN: 804-986-481
+2023-12-01 16:30:45,683 - INFO - 127.0.0.1 - - [01/Dec/2023 16:30:45] "GET / HTTP/1.1" 200 -
+2023-12-01 16:30:45,843 - INFO - 127.0.0.1 - - [01/Dec/2023 16:30:45] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2023-12-01 16:30:56,037 - INFO - Data cleaning process started...
+2023-12-01 16:30:56,053 - ERROR - Error during data cleaning for a chunk: can only concatenate str (not "int") to str
+2023-12-01 16:30:56,054 - INFO - Data cleaning process completed.
+2023-12-01 16:30:56,055 - ERROR - Error during data cleaning: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\KARIZM~1\\AppData\\Local\\Temp\\tmpjqjihyz9'
+2023-12-01 16:30:56,080 - INFO - 127.0.0.1 - - [01/Dec/2023 16:30:56] "POST /upload HTTP/1.1" 200 -
+2023-12-01 16:30:56,099 - INFO - 127.0.0.1 - - [01/Dec/2023 16:30:56] "[36mGET /static/style.css HTTP/1.1[0m" 304 -

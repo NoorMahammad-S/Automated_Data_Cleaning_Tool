@@ -1,0 +1,24 @@
+<!-- error.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Cleaning Error</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Data Cleaning Error</h1>
+
+        <p>An error occurred during the data cleaning process:</p>
+        <p><strong>{{ error_message }}</strong></p>
+
+        <p>Please check your input data and configuration. If the issue persists, contact support.</p>
+
+        <!-- You can include additional information or instructions here -->
+
+        <a href="/">Go back to the homepage</a>
+    </div>
+</body>
+</html>

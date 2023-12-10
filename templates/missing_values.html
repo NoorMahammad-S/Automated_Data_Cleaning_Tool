@@ -1,0 +1,35 @@
+<!-- missing_values.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handling Missing Values</title>
+</head>
+<body>
+    <h2>Missing Values</h2>
+    <table border="1">
+        <tr>
+            <th>Column</th>
+            <th>Missing Values</th>
+        </tr>
+        {% for col, missing_count in missing_values.items() %}
+        <tr>
+            <td>{{ col }}</td>
+            <td>{{ missing_count }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3>Choose Imputation Method:</h3>
+    <form action="/impute" method="post">
+        <select name="imputation_method">
+            {% for method in imputation_methods %}
+                <option value="{{ method }}">{{ method }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Impute">
+    </form>
+</body>
+</html>

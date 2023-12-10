@@ -1,0 +1,35 @@
+<!-- outlier_detection.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outlier Detection</title>
+</head>
+<body>
+    <h2>Outlier Detection</h2>
+    <table border="1">
+        <tr>
+            <th>Row</th>
+            <th>Is Outlier</th>
+        </tr>
+        {% for index, is_outlier in outliers.items() %}
+        <tr>
+            <td>{{ index }}</td>
+            <td>{{ is_outlier }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3>Choose Handling Method:</h3>
+    <form action="/handle_outliers" method="post">
+        <select name="handling_method">
+            {% for method in handling_methods %}
+                <option value="{{ method }}">{{ method }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Apply">
+    </form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!-- data_quality_checks.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Quality Checks</title>
+</head>
+<body>
+    <h2>Data Quality Checks</h2>
+
+    <h3>Duplicated Records</h3>
+    <table border="1">
+        <tr>
+            {% for col in duplicated_records.columns %}
+                <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+        {% for index, row in duplicated_records.iterrows() %}
+        <tr>
+            {% for value in row %}
+                <td>{{ value }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3>Choose Consistency Check:</h3>
+    <form action="/apply_consistency_check" method="post">
+        <select name="consistency_check">
+            {% for check in consistency_checks %}
+                <option value="{{ check }}">{{ check }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Apply">
+    </form>
+</body>
+</html>

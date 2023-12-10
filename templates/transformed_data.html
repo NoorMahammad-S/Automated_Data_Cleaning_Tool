@@ -1,0 +1,54 @@
+<!-- transformed_data.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Transformation</title>
+</head>
+<body>
+    <h2>Transformed Data</h2>
+
+    <h3>Log Transformation</h3>
+    <table border="1">
+        <tr>
+            {% for col in df_log_transformed.columns %}
+                <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+        {% for index, row in df_log_transformed.iterrows() %}
+        <tr>
+            {% for value in row %}
+                <td>{{ value }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3>Box-Cox Transformation</h3>
+    <table border="1">
+        <tr>
+            {% for col in df_boxcox_transformed.columns %}
+                <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+        {% for index, row in df_boxcox_transformed.iterrows() %}
+        <tr>
+            {% for value in row %}
+                <td>{{ value }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3>Choose Transformation Method:</h3>
+    <form action="/apply_transformation" method="post">
+        <select name="transformation_method">
+            <option value="log">Log Transformation</option>
+            <option value="boxcox">Box-Cox Transformation</option>
+        </select>
+        <input type="submit" value="Apply">
+    </form>
+</body>
+</html>

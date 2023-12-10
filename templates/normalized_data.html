@@ -1,0 +1,36 @@
+<!-- normalized_data.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Normalization</title>
+</head>
+<body>
+    <h2>Normalized Data</h2>
+    <table border="1">
+        <tr>
+            {% for col in normalized_data.columns %}
+                <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+        {% for index, row in normalized_data.iterrows() %}
+        <tr>
+            {% for value in row %}
+                <td>{{ value }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3>Choose Handling Method for Categorical Variables:</h3>
+    <form action="/handle_categorical" method="post">
+        <select name="handling_method">
+            <option value="one_hot_encoding">One-Hot Encoding</option>
+            <!-- Add more options as needed -->
+        </select>
+        <input type="submit" value="Apply">
+    </form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Cleaning Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Add any additional CSS or JS libraries for styling here -->
+</head>
+<body>
+    <div class="container">
+        <h1>Data Cleaning Tool</h1>
+
+        <p>Welcome to the Data Cleaning Tool. Upload your dataset and customize the cleaning process.</p>
+
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="file">Choose a file:</label>
+            <input type="file" id="file" name="file" accept=".csv, .xlsx, .json" required>
+            <br>
+            <input type="submit" value="Upload and Clean">
+        </form>
+
+        <!-- You can add more content, instructions, or links as needed -->
+
+        <!-- Example: Link to documentation -->
+        <p>Need help? Check the <a href="/documentation">documentation</a>.</p>
+
+        <footer>
+            <p>&copy; 2023 Data Cleaning Tool</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

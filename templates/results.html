@@ -1,0 +1,45 @@
+<!-- results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Cleaning Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Add any additional CSS or JS libraries for visualizations here -->
+</head>
+<body>
+    <div class="container">
+        <h1>Data Cleaning Results</h1>
+
+        <h2>Data Summary</h2>
+        <p>{{ summary_stats }}</p>
+
+        <!-- Display cleaned data in a table -->
+        <h2>Cleaned Data</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    {% for column in cleaned_data.columns %}
+                        <th>{{ column }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for index, row in cleaned_data.iterrows() %}
+                    <tr>
+                        {% for value in row %}
+                            <td>{{ value }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Add visualizations or other result displays here -->
+
+        <h2>Cleaning Logs</h2>
+        <pre>{{ cleaning_logs }}</pre>
+    </div>
+</body>
+</html>
