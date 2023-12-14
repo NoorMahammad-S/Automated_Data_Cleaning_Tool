@@ -26,7 +26,7 @@ def clean_data_chunk(chunk):
 
     # Drop columns with too many missing values
     threshold = 0.8  # Set your own threshold
-    cleaned_chunk = chunk.dropna(axis=1, thresh=int(threshold * len(chunk)))
+    cleaned_chunk = cleaned_chunk.dropna(axis=1, thresh=int(threshold * len(cleaned_chunk)))
 
     # Convert date columns to datetime objects
     date_columns = ['date_column1', 'date_column2']
